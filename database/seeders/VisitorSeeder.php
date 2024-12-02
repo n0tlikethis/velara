@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class VisitorSeeder extends Seeder
 {
-    protected $data = [
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table("visitors")->insert([
         [
             'nama' => 'Fariz Ali Muhaimin',
             'email' => 'paryz@gmail.com'
@@ -15,15 +20,6 @@ class VisitorSeeder extends Seeder
             'nama' => 'Rifqi Hidayat',
             'email' => 'hdytz@gmail.com'
         ]
-    ];
-
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        foreach ($this->data as $visitor) {
-            DB::table('visitors')->insert($visitor);
-        }
+    ]);
     }
 }
