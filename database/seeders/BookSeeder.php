@@ -7,32 +7,37 @@ use Illuminate\Support\Facades\DB;
 
 class BookSeeder extends Seeder
 {
-    protected $data = [
-        [
-            'nama' => '10 Dosa Besar Alkadafi',
-            'pengarang' => 'Ismatullah Shadqi'
-        ], [
-            'nama' => 'Animal Farm',
-            'pengarang' => 'George Orwell'
-        ], [
-            'nama' => 'The Phantom of the Opera',
-            'pengarang' => 'Gaston Leroux'
-        ], [
-            'nama' => 'Strange Case of Dr Jekyll and Mr Hyde',
-            'pengarang' => 'Robert Louis Stevenson'
-        ], [
-            'nama' => 'The Hound of The Baskervilles',
-            'pengarang' => 'Sir Arthur Conan Doyle'
-        ]
-    ];
-
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        foreach ($this->data as $book) {
-            DB::table('books')->insert($book);
-        }
+        DB::table("books")->insert([
+            [
+                "nama" => "10 Dosa Besar Alkadafi",
+                "pengarang" => "Ismatullah Shadqi",
+                "penerbit" => "Gramedia Mungkin",
+            ],
+            [
+                "nama" => "Animal Farm",
+                "pengarang" => "George Orwell",
+                "penerbit" => "Bentang Pustaka",
+            ],
+            [
+                "nama" => "The Phantom of the Opera",
+                "pengarang" => "Gaston Leroux",
+                "penerbit" => "Gramedia Pustaka Utama",
+            ],
+            [
+                "nama" => "Strange Case of Dr Jekyll and Mr Hyde",
+                "pengarang" => "Robert Louis Stevenson",
+                "penerbit" => "Gramedia Pustaka Utama",
+            ],
+            [
+                "nama" => "The Hound of The Baskervilles",
+                "pengarang" => "Sir Arthur Conan Doyle",
+                "penerbit" => "Gramedia Pustaka Utama",
+            ],
+        ]);
     }
 }
